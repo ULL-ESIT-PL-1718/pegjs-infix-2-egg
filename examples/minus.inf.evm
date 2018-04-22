@@ -1,0 +1,114 @@
+{
+  "type": "apply",
+  "operator": {
+    "type": "word",
+    "name": "print",
+    "token": {
+      "type": "WORD",
+      "value": "print",
+      "lineno": 1,
+      "offset": 0
+    }
+  },
+  "args": [
+    {
+      "type": "apply",
+      "operator": {
+        "type": "word",
+        "name": "-",
+        "token": {
+          "type": "WORD",
+          "value": "-",
+          "lineno": 1,
+          "offset": 0
+        }
+      },
+      "args": [
+        {
+          "type": "apply",
+          "operator": {
+            "type": "word",
+            "name": "-",
+            "token": {
+              "type": "WORD",
+              "value": "-",
+              "lineno": 1,
+              "offset": 0
+            }
+          },
+          "args": [
+            {
+              "type": "apply",
+              "operator": {
+                "type": "word",
+                "name": "*",
+                "token": {
+                  "type": "WORD",
+                  "value": "*",
+                  "lineno": 1,
+                  "offset": 0
+                }
+              },
+              "args": [
+                {
+                  "type": "apply",
+                  "operator": {
+                    "type": "word",
+                    "name": "*",
+                    "token": {
+                      "type": "WORD",
+                      "value": "*",
+                      "lineno": 1,
+                      "offset": 0
+                    }
+                  },
+                  "args": [
+                    {
+                      "type": "value",
+                      "value": 2
+                    },
+                    {
+                      "type": "value",
+                      "value": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "value",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "type": "value",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "type": "apply",
+          "operator": {
+            "type": "word",
+            "name": "*",
+            "token": {
+              "type": "WORD",
+              "value": "*",
+              "lineno": 1,
+              "offset": 0
+            }
+          },
+          "args": [
+            {
+              "type": "value",
+              "value": 5
+            },
+            {
+              "type": "value",
+              "value": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ Apply {
    Word {
      type: 'word',
      name: '-',
-     token: { type: 'WORD', value: '-', lineno: 1, offset: 0 } },
+      },
   args: 
    [ Value { type: 'value', value: 2 },
      Apply {
@@ -18,7 +18,7 @@ Apply {
         Word {
           type: 'word',
           name: '-',
-          token: { type: 'WORD', value: '-', lineno: 1, offset: 5 } },
+           },
        args: 
         [ Value { type: 'value', value: 3 },
           Value { type: 'value', value: 4 } ] } ] }
