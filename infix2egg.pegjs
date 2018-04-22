@@ -1,38 +1,22 @@
 { 
   const {Value, Word, Apply} = require("crguezl-egg/lib/ast.js")
 
-/*
+/* Egg AST
 > -(2, -(3,4))
 Apply {
-  type: 'apply',
-  operator: 
-   Word {
-     type: 'word',
-     name: '-',
-      },
+  type: 'apply', operator: Word { type: 'word', name: '-', },
   args: 
    [ Value { type: 'value', value: 2 },
      Apply {
-       type: 'apply',
-       operator: 
-        Word {
-          type: 'word',
-          name: '-',
-           },
+       type: 'apply', operator: Word { type: 'word', name: '-', },
        args: 
         [ Value { type: 'value', value: 3 },
-          Value { type: 'value', value: 4 } ] } ] }
+          Value { type: 'value', value: 4 } ] } 
+   ] }
 */
   function reduce(left, right) {
     return right.reduce(
-      (sum, [op, num]) => {
-                             debugger;
-                             return new Apply({
-                                 type: 'apply',
-                                 operator: op,
-                                 args: [sum, num]
-                             });  // end Apply
-                          },
+      (sum, [op, num]) => new Apply({ type: 'apply', operator: op, args: [sum, num] }), 
       left // 2nd argument for reduce. Initial value 
     ); // end reduce
   }
