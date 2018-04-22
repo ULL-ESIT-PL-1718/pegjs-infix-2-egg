@@ -103,3 +103,42 @@ library `lib/ast.js`:
 ```
 
 * Be sure you have access to your version of the lib!
+
+* Since JSON dos not gives support to objects we have to modify the file `lib/eggvm.js` 
+to re-build the objects from the JSON flat hashes. To achieve this goal we introduce 
+the `json2AST`method:
+
+```
+function json2AST(flatObject) {
+  switch(flatObject.type) {
+    case 'value':
+      return new Value(flatObject);
+
+    case 'word':
+      return new Word(flatObject);
+
+    case 'apply':
+      let obj = new Apply({
+        type: "apply", 
+        args: [], 
+        operator: json2AST(flatObject.operator)
+      });
+      obj.args = flatObject.args.map(json2AST);
+      return obj;
+    default: throw "Strange AST tree!!!"
+  }
+}
+
+function runFromEVM(fileName) {
+  try {
+    let json = fs.readFileSync(fileName, 'utf8');
+    let treeFlat = JSON.parse(json);
+    let tree = json2AST(treeFlat);
+    let env = Object.create(topEnv);
+    return tree.evaluate(env);
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
+```
