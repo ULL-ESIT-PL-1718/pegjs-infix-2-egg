@@ -1,0 +1,27 @@
+{
+  "name": "pegjs-examples",
+  "version": "1.0.0",
+  "description": "PEG.js examples",
+  "main": "",
+  "dependencies": {
+    "@ull-esit-pl/peg-stack": "github:ull-esit-pl/peg-stack",
+    "@ull-esit-pl/pegjs-strip": "^1.0.0",
+    "pegjs": "^0.10.0",
+    "pegjs-coffee-plugin": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-PL-1617/pegjs-examples.git"
+  },
+  "keywords": [],
+  "author": "Casiano Rodriguez-Leon <casiano.rodriguez.leon@gmail.com> (https://github.com/crguezl)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-PL-1617/pegjs-examples/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-PL-1617/pegjs-examples#readme"
+}
