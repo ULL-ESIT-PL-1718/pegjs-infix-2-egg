@@ -77,4 +77,13 @@ $ crguezl-egg/bin/evm.js examples/minus.inf.evm
 3
 ```
 
-It uses the definitions in `lib/ast.js`. Be sure you have access to it
+It uses the definitions in `lib/ast.js`:
+```
+{ 
+  const {Value, Word, Apply} = require("crguezl-egg/lib/ast.js")
+  ...
+}
+...
+```
+
+Be sure you have access to it
