@@ -79,7 +79,7 @@ result = {
   ]
 }
 ```
-The result of the compilation is a file `minus.inf.evm`:`
+The result of the compilation is a JSON file `minus.inf.evm`:`
 ```
 $ ls -ltr examples/
 total 16
