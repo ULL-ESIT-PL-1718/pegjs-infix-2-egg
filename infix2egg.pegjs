@@ -1,19 +1,85 @@
 { 
+  const {Value, Word, Apply} = require("crguezl-egg/lib/ast.js")
+
+/*
+> -(2, -(3,4))
+Apply {
+  type: 'apply',
+  operator: 
+   Word {
+     type: 'word',
+     name: '-',
+     token: { type: 'WORD', value: '-', lineno: 1, offset: 0 } },
+  args: 
+   [ Value { type: 'value', value: 2 },
+     Apply {
+       type: 'apply',
+       operator: 
+        Word {
+          type: 'word',
+          name: '-',
+          token: { type: 'WORD', value: '-', lineno: 1, offset: 5 } },
+       args: 
+        [ Value { type: 'value', value: 3 },
+          Value { type: 'value', value: 4 } ] } ] }
+*/
   function reduce(left, right) {
-    return right.reduce((sum, [op, num]) => eval(`sum ${op}= num`), left);
+    return right.reduce(
+      (sum, [op, num]) => {
+                             debugger;
+                             return new Apply({
+                                 type: 'apply',
+                                 operator: op,
+                                 args: [sum, num]
+                             });  // end Apply
+                          },
+      left // 2nd argument for reduce. Initial value 
+    ); // end reduce
   }
 }
 
+print      = e:expression                        
+  {
+     return new Apply({
+				type: 'apply',
+				operator: 
+				  new Word({
+					 type: 'word',
+					 name: 'print',
+					 token: { type: 'WORD', value: 'print', lineno: 1, offset: 0 } }),
+					args: [e] });
+  }
 expression = sum:sum EOI                         { return sum; }
-sum        = left:product right:($plus product)* { return reduce(left, right); }
-product    = left:value   right:($mult value)*   { return reduce(left, right); }
+sum        = left:product right:(plus product)*  { return reduce(left, right); }
+product    = left:value   right:(mult value)*    { return reduce(left, right); }
 value      = number:number                       { return number; }
            / LP sum:sum RP                       { return sum; }
 
 /* Lexical Analysis Section */
-plus   = __ plus:$[+-]      { return plus; }
-mult   = __ mult:$[*/]      { return mult; }
-number = __ number:$[0-9]+  { return parseInt(number,10); }
+plus   = __ plus:$[+-]
+  { 
+    // debugger;
+    return new Word({ 
+      type: 'word', 
+      name: plus, 
+      token: { type: 'WORD', value: plus, lineno: 1, offset: 0 } 
+    });
+  }
+mult   = __ mult:$[*/]      
+  { 
+    //debugger;
+    return new Word({
+      type: 'word',
+      name: mult,
+      token: { type: 'WORD', value: mult, lineno: 1, offset: 0 } 
+    });
+  }
+
+number = __ number:$[0-9]+  
+  { 
+      return new Value({ type: 'value', value: parseInt(number,10) });
+  }
+
 LP     = __ '('
 RP     = __ ')'
 EOI    = __ !.

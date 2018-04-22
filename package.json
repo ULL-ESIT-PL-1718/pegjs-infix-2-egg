@@ -4,10 +4,8 @@
   "description": "PEG.js examples",
   "main": "",
   "dependencies": {
-    "@ull-esit-pl/peg-stack": "github:ull-esit-pl/peg-stack",
-    "@ull-esit-pl/pegjs-strip": "^1.0.0",
-    "pegjs": "^0.10.0",
-    "pegjs-coffee-plugin": "^0.3.0"
+    "cryo": "0.0.6",
+    "node-serialize": "0.0.4"
   },
   "devDependencies": {},
   "scripts": {
