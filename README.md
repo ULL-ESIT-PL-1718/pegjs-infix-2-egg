@@ -16,7 +16,7 @@ $ cat examples/minus.inf
 $ ./i2e.js examples/minus.inf
 program: 2*4*2-3-5*2
 ```
-It outputs the AST:
+It outputs the following AST:
 ```
 result = {
   "type": "apply",
