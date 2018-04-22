@@ -130,7 +130,12 @@ function json2AST(flatObject) {
     default: throw "Strange AST tree!!!"
   }
 }
+```
 
+Therefore, after reading the JSON file, we parse it with `JSON.parse` and 
+rebuild the AST objects with `json2AST`:
+
+```
 function runFromEVM(fileName) {
   try {
     let json = fs.readFileSync(fileName, 'utf8');
