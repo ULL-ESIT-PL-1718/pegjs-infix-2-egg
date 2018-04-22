@@ -12,6 +12,6 @@ try {
   fs.writeFileSync(fileName+".evm", json);
 }
 catch (err) {
-  console.log(err);
+  console.log(`${err.message} at line ${err.location.start.line} column ${err.location.start.column} offset ${err.location.start.offset}`);
 }
 

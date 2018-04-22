@@ -30,7 +30,7 @@ print      = e:expression
 				  new Word({
 					 type: 'word',
 					 name: 'print',
-					 token: { type: 'WORD', value: 'print', lineno: 1, offset: 0 } }),
+					 token: { type: 'WORD', value: 'print', lineno: 0, offset: 0 } }),
 					args: [e] });
   }
 expression = sum:sum EOI                         { return sum; }
@@ -46,7 +46,8 @@ plus   = __ plus:$[+-]
     return new Word({ 
       type: 'word', 
       name: plus, 
-      token: { type: 'WORD', value: plus, lineno: 1, offset: 0 } 
+      token: { type: 'WORD', value: plus, 
+               lineno: location().start.line, offset: location().start.offset } 
     });
   }
 mult   = __ mult:$[*/]      
@@ -55,13 +56,15 @@ mult   = __ mult:$[*/]
     return new Word({
       type: 'word',
       name: mult,
-      token: { type: 'WORD', value: mult, lineno: 1, offset: 0 } 
+      token: { type: 'WORD', value: mult, 
+               lineno: location().start.line, offset: location().start.offset } 
     });
   }
 
 number = __ number:$[0-9]+  
   { 
-      return new Value({ type: 'value', value: parseInt(number,10) });
+      return new Value({ type: 'value', value: parseInt(number,10), 
+                         lineno: location().start.line, offset: location().start.offset });
   }
 
 LP     = __ '('
