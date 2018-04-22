@@ -106,7 +106,7 @@ library `lib/ast.js`:
 
 * Since JSON dos not gives support to objects we have to modify the file `lib/eggvm.js` 
 to re-build the objects from the JSON flat hashes (remember we decided to represent 
-our virtual machine programs in JSON format)
+our virtual machine programs in JSON format).
 To achieve this goal we introduce 
 the `json2AST`method:
 
