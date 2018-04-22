@@ -1,6 +1,6 @@
 Example using PEG.js. 
 
-Translates infix expressions to Egg Virtual Machine (evm.js)
+Translates infix expressions to Egg Virtual Machine ([evm.js](https://github.com/ULL-ESIT-PL-1718/egg/blob/private/bin/evm.js) *private link*)
 
 * Compile the grammar:
 ```
@@ -104,7 +104,7 @@ library `lib/ast.js`:
 
 * Be sure you have access to your version of the lib!
 
-* Since JSON dos not gives support to objects we have to modify the file `lib/eggvm.js` 
+* Since JSON dos not gives support to objects we have to modify the file [`lib/eggvm.js`](https://github.com/ULL-ESIT-PL-1718/egg/blob/private/lib/eggvm.js#L31-L65) (*private link*) 
 to re-build the objects from the JSON flat hashes (remember we decided to represent 
 our virtual machine programs in JSON format).
 To achieve this goal we introduce 
