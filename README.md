@@ -17,7 +17,7 @@ $ ./i2e.js examples/minus.inf
 program: 2*4*2-3-5*2
 ```
 * It outputs the following AST:
-```
+```javascript
 result = {
   "type": "apply",
   "operator": {
@@ -94,7 +94,7 @@ $ crguezl-egg/bin/evm.js examples/minus.inf.evm
 * To make this program works, the PEG file makes use of the definitions in  our 
 library `lib/ast.js`:
 
-```
+```javascript
 { 
   const {Value, Word, Apply} = require("crguezl-egg/lib/ast.js")
   ...
@@ -110,7 +110,7 @@ our virtual machine programs in JSON format).
 To achieve this goal we introduce 
 the `json2AST`method:
 
-```
+```javascript
 function json2AST(flatObject) {
   switch(flatObject.type) {
     case 'value':
@@ -135,7 +135,7 @@ function json2AST(flatObject) {
 Therefore, after reading the JSON file, we parse it with `JSON.parse` and 
 rebuild the AST objects with `json2AST`:
 
-```
+```javascript
 function runFromEVM(fileName) {
   try {
     let json = fs.readFileSync(fileName, 'utf8');
