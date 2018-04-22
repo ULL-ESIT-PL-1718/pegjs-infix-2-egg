@@ -43,16 +43,7 @@ result = {
                     "type": "word",
                     "name": "*",
                   },
-                  "args": [
-                    {
-                      "type": "value",
-                      "value": 2
-                    },
-                    {
-                      "type": "value",
-                      "value": 4
-                    }
-                  ]
+                  "args": [ { "type": "value", "value": 2 }, { "type": "value", "value": 4 } ]
                 },
                 {
                   "type": "value",
@@ -72,16 +63,7 @@ result = {
             "type": "word",
             "name": "*",
           },
-          "args": [
-            {
-              "type": "value",
-              "value": 5
-            },
-            {
-              "type": "value",
-              "value": 2
-            }
-          ]
+          "args": [ { "type": "value", "value": 5 }, { "type": "value", "value": 2 } ]
         }
       ]
     }
