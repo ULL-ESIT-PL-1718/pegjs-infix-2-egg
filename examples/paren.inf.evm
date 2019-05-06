@@ -2,26 +2,14 @@
   "type": "apply",
   "operator": {
     "type": "word",
-    "name": "print",
-    "token": {
-      "type": "WORD",
-      "value": "print",
-      "lineno": 1,
-      "offset": 0
-    }
+    "name": "print"
   },
   "args": [
     {
       "type": "apply",
       "operator": {
         "type": "word",
-        "name": "*",
-        "token": {
-          "type": "WORD",
-          "value": "*",
-          "lineno": 1,
-          "offset": 0
-        }
+        "name": "*"
       },
       "args": [
         {
@@ -32,13 +20,7 @@
           "type": "apply",
           "operator": {
             "type": "word",
-            "name": "-",
-            "token": {
-              "type": "WORD",
-              "value": "-",
-              "lineno": 1,
-              "offset": 0
-            }
+            "name": "-"
           },
           "args": [
             {

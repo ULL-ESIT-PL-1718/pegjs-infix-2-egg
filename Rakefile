@@ -36,6 +36,6 @@ task :deb_paren => :compile do
 end
 
 desc "run evm examples/paren.inf.evm"
-task :evm_paren => :run do
+task :evm_paren => :run_paren do
   sh "crguezl-egg/bin/evm.js examples/paren.inf.evm"
 end
