@@ -2,6 +2,8 @@ Example using PEG.js.
 
 Translates infix expressions to Egg Virtual Machine ([evm.js](https://github.com/ULL-ESIT-PL-1718/egg/blob/private/bin/evm.js) *private link*)
 
+* 2019. Simbolic Link: crguezl-egg -> /Users/casiano/local/src/javascript/PLgrado/eloquentjsegg
+
 * Compile the grammar:
 ```
 $ pegjs infix2egg.pegjs
