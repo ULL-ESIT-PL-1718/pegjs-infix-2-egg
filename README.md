@@ -2,14 +2,16 @@ Example using PEG.js.
 
 Translates infix expressions to Egg Virtual Machine ([evm.js](https://github.com/ULL-ESIT-PL-1718/egg/blob/private/bin/evm.js) *private link*)
 
-* 2019. Simbolic Link: crguezl-egg -> /Users/casiano/local/src/javascript/PLgrado/eloquentjsegg
+* You have to make a Simbolic Link to the directory containing the sources of Egg: 
+  - crguezl-egg -> /Users/casiano/local/src/javascript/PLgrado/eloquentjsegg
+  - See file infix2egg.pegjs: const {Value, Word, Apply} = require("crguezl-egg/lib/ast.js")
 
 * Compile the grammar:
 ```
 $ pegjs infix2egg.pegjs
 ```
 * Now consider this infix *program*:
-```
+E```
 $ cat examples/minus.inf
 2*4*2-3-5*2
 ```
