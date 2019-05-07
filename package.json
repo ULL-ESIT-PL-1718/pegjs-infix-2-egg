@@ -4,6 +4,7 @@
   "description": "PEG.js examples",
   "main": "",
   "dependencies": {
+    "commander": "^2.20.0",
     "cryo": "0.0.6",
     "node-serialize": "0.0.4"
   },
