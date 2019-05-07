@@ -1,7 +1,7 @@
 {
   "name": "pegjs-examples",
   "version": "1.0.0",
-  "description": "PEG.js examples",
+  "description": "Example of Infix to AST Egg translator using PEG.js",
   "main": "",
   "dependencies": {
     "commander": "^2.20.0",
@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/ULL-ESIT-PL-1617/pegjs-examples/issues"
   },
-  "homepage": "https://github.com/ULL-ESIT-PL-1617/pegjs-examples#readme"
+  "homepage": "https://github.com/ULL-ESIT-PL-1617/pegjs-examples#readme",
+  "evm": "./evm.js"
 }
