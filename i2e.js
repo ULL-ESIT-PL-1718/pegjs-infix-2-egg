@@ -11,6 +11,7 @@ let evm = package.evm;
 
 let commander = require('commander');
  
+let outputFile;
 
 
 commander
@@ -18,7 +19,7 @@ commander
   .description(description)
   .usage('[options] <programPath>')
   .option('-t, --tree', 'Show AST')
-  .option('-o, --output [file]', 'Output file')
+  .option('-o, --output [file]', 'Output file', out => outputFile = out)
   .option('-r, --run', 'Run program')
   .parse(process.argv);
 
@@ -31,7 +32,7 @@ try {
   let tree = PEG.parse(infixProgram);
   let json = JSON.stringify(tree, null, "  ");
   if (commander.tree) console.log(`program: ${infixProgram}\nresult = ${json}`);
-  let outputFile = (commander.output && commander.output) || fileName+".evm";
+  outputFile = outputFile || fileName+".evm";
   fs.writeFileSync(outputFile, json);
   if (commander.run) {
     const evmRun = spawn(evm, [ outputFile ]);
